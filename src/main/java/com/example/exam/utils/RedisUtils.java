@@ -10,6 +10,8 @@ import javax.annotation.Resource;
 
 @Component
 public class RedisUtils {
+//    空指针报错的话需要这一段代码运行在redis客户端
+//    config set stop-writes-on-bgsave-error no
     @Autowired
     RedisTemplate<String,String> redisTemplate;
     /**
