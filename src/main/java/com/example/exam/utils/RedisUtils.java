@@ -7,6 +7,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class RedisUtils {
@@ -19,10 +20,15 @@ public class RedisUtils {
      * @param key key
      * @param value value
      */
-    public void setString(String key, String value){
+    public void setString(String key, String  value){
         System.out.println(redisTemplate);
         ValueOperations<String, String> valueOperations = redisTemplate.opsForValue();
         valueOperations.set(key, value);
+    }
+    public void setString(String key, String  value,long timeout, TimeUnit unit){
+        System.out.println(redisTemplate);
+        ValueOperations<String, String> valueOperations = redisTemplate.opsForValue();
+        valueOperations.set(key, value,timeout,unit);
     }
     /**
      * get redis: string类型

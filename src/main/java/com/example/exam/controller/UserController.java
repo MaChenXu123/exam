@@ -14,9 +14,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     @GetMapping("getUser")
-    private R getUser() {
-        RedisUtils redisUtils = new RedisUtils();
-        redisUtils.setString("Mcx","Mcx");
+    public R getUser() {
         return userService.getUser();
     }
 }

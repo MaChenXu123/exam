@@ -25,6 +25,7 @@ public class aExam {
     @TableField("examNum")
     private int examNum;
 
+
     //第几套试卷
     @TableField("paperId")
     private int paperId;
